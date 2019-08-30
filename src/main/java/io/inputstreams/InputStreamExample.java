@@ -1,6 +1,9 @@
 package io.inputstreams;
 
-import java.io.*;
+import java.io.BufferedInputStream;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 
 public class InputStreamExample {
 
@@ -9,10 +12,10 @@ public class InputStreamExample {
 
     public static void main(String [] str) throws IOException {
 
-        long startTimeWithoutBuffer, endTimeWithoutBuffer;
-
-        startTimeWithoutBuffer = System.nanoTime();
         // Reading using FileInputStream.
+        long startTimeWithoutBuffer, endTimeWithoutBuffer;
+        startTimeWithoutBuffer = System.nanoTime();
+
         InputStream inputStream = new FileInputStream("./src/main/resources/text-files/GPL-3.0-sample.txt");
 
         int data = inputStream.read();
@@ -23,16 +26,15 @@ public class InputStreamExample {
         inputStream.close();
         endTimeWithoutBuffer = System.nanoTime();
 
-
         System.out.println("\n");
         for(int i=0; i<80; i++)
             System.out.print("=");
         System.out.println("\n");
 
-        long startTimeWithBuffer, endTimeWithBuffer;
-
-        startTimeWithBuffer = System.nanoTime();
         // Reading the same file with BufferedInputStream.
+        long startTimeWithBuffer, endTimeWithBuffer;
+        startTimeWithBuffer = System.nanoTime();
+
         InputStream bufferedInputStream = new BufferedInputStream(
                 new FileInputStream("./src/main/resources/text-files/GPL-3.0-sample.txt")
         );
@@ -47,5 +49,19 @@ public class InputStreamExample {
 
         System.out.println("\nWithout Buffer Time => " + (endTimeWithoutBuffer-startTimeWithoutBuffer)/ONE_MILLION
                 + " With Buffer Time => " + (endTimeWithBuffer - startTimeWithBuffer)/ONE_MILLION);
+
+        // Reading for console. Input 'Q' to exit for the console.
+        InputStream consoleInputStream = new BufferedInputStream(System.in);
+
+        data = consoleInputStream.read();
+        while (data != EOF) {
+            System.out.print((char) data);
+            data = consoleInputStream.read();
+
+            if ('Q' == (char)data) {
+                break;
+            }
+        }
+        consoleInputStream.close();
     }
 }
