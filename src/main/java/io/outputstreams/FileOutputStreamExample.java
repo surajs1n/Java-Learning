@@ -11,7 +11,7 @@ public class FileOutputStreamExample {
 
     private static final int THOUSAND = 1000;
     private static final int MILLION  = 1000000;
-    private static final String OUTPUT_FILE_PATH = "./src/main/resources/text-files/FileOutputStream-Example .txt";
+    private static final String OUTPUT_FILE_PATH = "./src/main/resources/text-files/FileOutputStream-Example.txt";
 
     public static void main(String [] args) throws IOException {
         // Creating a new file.
