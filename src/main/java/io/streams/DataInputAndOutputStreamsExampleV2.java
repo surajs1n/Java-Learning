@@ -13,11 +13,17 @@ public class DataInputAndOutputStreamsExampleV2 {
 
     /**
      * Input given to DataOutputStream.
+     * 10
      * 1
-     * a
-     * 2.3
-     * 23.33
-     * suraj
+     * 2
+     * 3
+     * 4
+     * 5
+     * 6
+     * 7
+     * 8
+     * 9
+     * 10
      *
      * Expected input into DataInputStream.
      * @param args
