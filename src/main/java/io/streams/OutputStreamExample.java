@@ -1,4 +1,4 @@
-package io.outputstreams;
+package io.streams;
 
 import org.apache.commons.lang3.RandomStringUtils;
 
