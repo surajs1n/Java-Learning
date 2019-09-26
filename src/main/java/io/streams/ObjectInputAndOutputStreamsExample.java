@@ -18,6 +18,7 @@ public class ObjectInputAndOutputStreamsExample {
     @AllArgsConstructor
     @NoArgsConstructor
     private static class Student implements Serializable {
+        private static final long serialVersionUID = 111;
         private String name;
         private String clazz;
         private int age;
