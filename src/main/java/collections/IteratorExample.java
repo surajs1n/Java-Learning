@@ -21,7 +21,7 @@ public class IteratorExample {
         stringSet.add("654");
         stringSet.add("321");
 
-        Iterator iterator = stringList.iterator();
+        Iterator<String> iterator = stringList.iterator();
         while (iterator.hasNext()) {
             Object object = iterator.next();
             System.out.println(object);
@@ -55,6 +55,5 @@ public class IteratorExample {
             Object object = iterator.next();
             System.out.println(object);
         }
-
     }
 }
