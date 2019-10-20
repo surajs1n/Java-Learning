@@ -10,7 +10,7 @@ import java.util.Set;
 /**
  * Example of Set interface. Following are the concrete implementation of Set.
  * 1. EnumSet
- * 2. HashSet
+ * 2. HashSet : Hashset under the hood uses HashMap.
  * 3. LinkedHashSet
  * 4. TreeSet
  *
@@ -57,7 +57,11 @@ public class SetExample {
     }
 
     private static void printObject(final Object object) {
-        System.out.println(ReflectionToStringBuilder.toString(object));
+        if (object != null)
+            System.out.println(ReflectionToStringBuilder.toString(object));
+        else
+            System.err.println("Object is null");
     }
+
 
 }

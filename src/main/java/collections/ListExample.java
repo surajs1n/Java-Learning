@@ -93,9 +93,14 @@ public class ListExample {
         System.out.print("\n");
     }
 
+
     private static void printObject(final Object object) {
-        System.out.println(ReflectionToStringBuilder.toString(object));
+        if (object != null)
+            System.out.println(ReflectionToStringBuilder.toString(object));
+        else
+            System.err.println("Object is null");
     }
+
 
     private static void printListWithMetaData(List list) {
         System.out.println(list.getClass() + " ");
